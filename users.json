@@ -3,96 +3,92 @@
     {
       "id": 1,
       "uname": "minh.anh",
-      "password": "minhanh@123",
       "url_profile": "https://i.pravatar.cc/300?img=47",
-      "short_bio": "Food photographer who loves tropical fruits.",
+      "short_bio": "Sinh viên yêu thích nhiếp ảnh và sáng tạo nội dung.",
       "articles": [
         {
           "article_id": 1,
-          "article_title": "Pineapple",
-          "article_image": "https://images.unsplash.com/photo-1550258987-190a2d41a8ba",
-          "article_description": "A short article about pineapple and tropical fruit."
+          "article_title": "Học vấn",
+          "article_description": "Sinh viên ngành Truyền thông đa phương tiện, quan tâm đến hình ảnh và nội dung số."
         },
         {
-          "article_id": 5,
-          "article_title": "Strawberry",
-          "article_image": "https://images.unsplash.com/photo-1560155069-ad79768f2666",
-          "article_description": "A short article about strawberries."
+          "article_id": 2,
+          "article_title": "Sở thích",
+          "article_description": "Nhiếp ảnh, chỉnh sửa hình ảnh, nghe nhạc và khám phá các địa điểm mới."
         },
         {
-          "article_id": 9,
-          "article_title": "Pear",
-          "article_image": "https://images.unsplash.com/photo-1601876819102-99560f772713",
-          "article_description": "A short article about pears."
+          "article_id": 3,
+          "article_title": "Khu vực",
+          "article_description": "Đang sinh sống và học tập tại Thành phố Hồ Chí Minh."
         }
       ]
     },
     {
       "id": 2,
       "uname": "lan.huong",
-      "password": "lanhuong@123",
       "url_profile": "https://i.pravatar.cc/300?img=32",
-      "short_bio": "Home cook sharing simple fruit recipes.",
+      "short_bio": "Người yêu thích nấu ăn, chia sẻ trải nghiệm và kết nối cộng đồng.",
       "articles": [
         {
-          "article_id": 2,
-          "article_title": "Cherry",
-          "article_image": "https://images.unsplash.com/photo-1528821128474-27f963b062bf",
-          "article_description": "A short article about cherries."
+          "article_id": 4,
+          "article_title": "Công việc",
+          "article_description": "Cộng tác viên nội dung, thường xuyên tham gia các hoạt động truyền thông và sự kiện."
+        },
+        {
+          "article_id": 5,
+          "article_title": "Sở thích",
+          "article_description": "Nấu ăn, đọc sách, xem phim và tham gia các hoạt động cộng đồng."
         },
         {
           "article_id": 6,
-          "article_title": "Apple",
-          "article_image": "https://images.unsplash.com/photo-1600423115367-87ea7661688f",
-          "article_description": "A short article about apples."
-        },
-        {
-          "article_id": 10,
-          "article_title": "Blueberry",
-          "article_image": "https://images.unsplash.com/photo-1600046438510-46961a84f4b2",
-          "article_description": "A short article about blueberries."
+          "article_title": "Mục tiêu",
+          "article_description": "Muốn phát triển kỹ năng giao tiếp, làm việc nhóm và xây dựng nội dung hữu ích."
         }
       ]
     },
     {
       "id": 3,
       "uname": "quoc.bao",
-      "password": "quocbao@123",
       "url_profile": "https://i.pravatar.cc/300?img=12",
-      "short_bio": "Nutrition student and weekend farmer.",
+      "short_bio": "Sinh viên công nghệ quan tâm đến lập trình và các sản phẩm số.",
       "articles": [
         {
-          "article_id": 3,
-          "article_title": "Orange",
-          "article_image": "https://images.unsplash.com/photo-1552841847-0e031d33a283",
-          "article_description": "A short article about oranges."
+          "article_id": 7,
+          "article_title": "Chuyên môn",
+          "article_description": "Đang học lập trình ứng dụng, tập trung vào Java, Android và phát triển sản phẩm số."
         },
         {
-          "article_id": 7,
-          "article_title": "Pomegranate",
-          "article_image": "https://images.unsplash.com/photo-1530730459653-e0edd4c6072e",
-          "article_description": "A short article about pomegranates."
+          "article_id": 8,
+          "article_title": "Sở thích",
+          "article_description": "Lập trình, chơi thể thao, nghe podcast công nghệ và tìm hiểu sản phẩm mới."
+        },
+        {
+          "article_id": 9,
+          "article_title": "Kỹ năng",
+          "article_description": "Có kỹ năng làm việc nhóm, giải quyết vấn đề và sử dụng các công cụ phát triển phần mềm cơ bản."
         }
       ]
     },
     {
       "id": 4,
       "uname": "thu.trang",
-      "password": "thutrang@123",
       "url_profile": "https://i.pravatar.cc/300?img=5",
-      "short_bio": "Travel blogger collecting stories from local markets.",
+      "short_bio": "Người yêu thích du lịch, trải nghiệm văn hóa và chia sẻ câu chuyện cá nhân.",
       "articles": [
         {
-          "article_id": 4,
-          "article_title": "Avocado",
-          "article_image": "https://images.unsplash.com/photo-1519162808019-7de1683fa2ad",
-          "article_description": "A short article about avocado."
+          "article_id": 10,
+          "article_title": "Công việc",
+          "article_description": "Sáng tạo nội dung về trải nghiệm, địa điểm và các hoạt động đời sống."
         },
         {
-          "article_id": 8,
-          "article_title": "Papaya",
-          "article_image": "https://images.unsplash.com/photo-1517282009859-f000ec3b26fe",
-          "article_description": "A short article about papaya."
+          "article_id": 11,
+          "article_title": "Sở thích",
+          "article_description": "Du lịch, chụp ảnh, viết nhật ký và khám phá văn hóa địa phương."
+        },
+        {
+          "article_id": 12,
+          "article_title": "Định hướng",
+          "article_description": "Muốn phát triển khả năng kể chuyện và xây dựng nội dung gần gũi với người dùng."
         }
       ]
     }
