@@ -1,58 +1,203 @@
 package thanhdnh.ueh.edu.article_app;
 
+import android.graphics.Color;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.ImageView;
+import android.util.TypedValue;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.material.imageview.ShapeableImageView;
 import com.squareup.picasso.Picasso;
 
-public class ViewArticleActivity extends AppCompatActivity {
-  ImageView iv_detail, iv_author_avatar;
-  TextView tv_detail_title, tv_detail_description;
-  TextView tv_author_name, tv_author_bio, tv_author_count;
-  View ll_author;
+import java.util.ArrayList;
+
+public class ViewArticleActivity
+        extends AppCompatActivity {
+
+  ShapeableImageView ivUserProfile;
+
+  TextView tvUserName;
+  TextView tvUserBio;
+  TextView tvRelatedCount;
+
+  LinearLayout llRelatedArticles;
 
   @Override
-  protected void onCreate(Bundle savedInstanceState) {
+  protected void onCreate(
+          Bundle savedInstanceState
+  ) {
+
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_view_article);
-    getSupportActionBar().hide();
 
-    iv_detail = findViewById(R.id.iv_detail);
-    tv_detail_title = findViewById(R.id.tv_detail_title);
-    tv_detail_description = findViewById(R.id.tv_detail_description);
-    ll_author = findViewById(R.id.ll_author);
-    iv_author_avatar = findViewById(R.id.iv_author_avatar);
-    tv_author_name = findViewById(R.id.tv_author_name);
-    tv_author_bio = findViewById(R.id.tv_author_bio);
-    tv_author_count = findViewById(R.id.tv_author_count);
+    setContentView(
+            R.layout.activity_view_article
+    );
 
-    int id = (int) getIntent().getLongExtra("id", 0);
-    Article article = ArticleData.getPhotoFromId(id);
-    if (article == null) { // dữ liệu chưa có (ví dụ app bị hệ thống thu hồi bộ nhớ)
+    if (getSupportActionBar() != null) {
+      getSupportActionBar().hide();
+    }
+
+    ivUserProfile =
+            findViewById(
+                    R.id.iv_user_profile
+            );
+
+    tvUserName =
+            findViewById(
+                    R.id.tv_user_name
+            );
+
+    tvUserBio =
+            findViewById(
+                    R.id.tv_user_bio
+            );
+
+    tvRelatedCount =
+            findViewById(
+                    R.id.tv_related_count
+            );
+
+    llRelatedArticles =
+            findViewById(
+                    R.id.ll_related_articles
+            );
+
+    int userId =
+            (int) getIntent()
+                    .getLongExtra(
+                            "user_id",
+                            0
+                    );
+
+    User user =
+            UserData.getUserFromId(
+                    userId
+            );
+
+    if (user == null) {
       finish();
       return;
     }
 
-    Picasso.get().load(article.getArticle_image()).resize(400, 500).centerCrop().into(iv_detail);
-    tv_detail_title.setText(article.getArticle_title());
-    tv_detail_description.setText(article.getArticle_description());
+    displayUser(user);
+  }
 
-    User user = article.getUser();
-    if (user == null) {
-      ll_author.setVisibility(View.GONE);
+  private void displayUser(User user) {
+
+    tvUserName.setText(
+            user.getUname()
+    );
+
+    tvUserBio.setText(
+            user.getShort_bio()
+    );
+
+    String avatar =
+            user.getUrl_profile();
+
+    if (avatar != null &&
+            !avatar.isEmpty()) {
+
+      Picasso.get()
+              .load(avatar)
+              .resize(300, 300)
+              .centerCrop()
+              .into(ivUserProfile);
+    }
+
+    ArrayList<Article> articles =
+            user.getArticles();
+
+    if (articles == null) {
+
+      tvRelatedCount.setText(
+              "Bài viết liên quan (0)"
+      );
+
       return;
     }
-    tv_author_name.setText(user.getUname());
-    tv_author_bio.setText(user.getShort_bio());
-    tv_author_count.setText(ArticleData.getArticlesByUserId(user.getId()).size() + " bài viết");
 
-    String avatar = user.getUrl_profile();
-    if (avatar != null && !avatar.isEmpty()) {
-      Picasso.get().load(avatar).resize(200, 200).centerCrop().into(iv_author_avatar);
+    tvRelatedCount.setText(
+            "Bài viết liên quan (" +
+                    articles.size() +
+                    ")"
+    );
+
+    for (Article article : articles) {
+
+      addArticleView(article);
     }
+  }
+
+  private void addArticleView(
+          Article article
+  ) {
+
+    TextView articleView =
+            new TextView(this);
+
+    String content =
+            article.getArticle_title()
+                    + "\n"
+                    + article.getArticle_description();
+
+    articleView.setText(content);
+
+    articleView.setTextColor(
+            Color.WHITE
+    );
+
+    articleView.setTextSize(
+            TypedValue.COMPLEX_UNIT_SP,
+            15
+    );
+
+    articleView.setBackgroundColor(
+            Color.parseColor("#1E1E1E")
+    );
+
+    int padding =
+            dpToPx(12);
+
+    articleView.setPadding(
+            padding,
+            padding,
+            padding,
+            padding
+    );
+
+    LinearLayout.LayoutParams params =
+            new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.MATCH_PARENT,
+                    LinearLayout.LayoutParams.WRAP_CONTENT
+            );
+
+    params.setMargins(
+            0,
+            0,
+            0,
+            dpToPx(10)
+    );
+
+    articleView.setLayoutParams(
+            params
+    );
+
+    llRelatedArticles.addView(
+            articleView
+    );
+  }
+
+  private int dpToPx(int dp) {
+
+    return (int)
+            TypedValue.applyDimension(
+                    TypedValue.COMPLEX_UNIT_DIP,
+                    dp,
+                    getResources()
+                            .getDisplayMetrics()
+            );
   }
 }

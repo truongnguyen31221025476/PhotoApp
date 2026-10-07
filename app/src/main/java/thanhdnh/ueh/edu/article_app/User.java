@@ -3,7 +3,10 @@ package thanhdnh.ueh.edu.article_app;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.util.ArrayList;
+
 public class User {
+
     @SerializedName("id")
     @Expose
     private int id;
@@ -24,12 +27,41 @@ public class User {
     @Expose
     private String short_bio;
 
-    public User(int id, String uname, String password, String url_profile, String short_bio) {
+    @SerializedName("articles")
+    @Expose
+    private ArrayList<Article> articles;
+
+    public User() {
+    }
+
+    // Giữ constructor cũ
+    public User(int id,
+                String uname,
+                String password,
+                String url_profile,
+                String short_bio) {
+
         this.id = id;
         this.uname = uname;
         this.password = password;
         this.url_profile = url_profile;
         this.short_bio = short_bio;
+    }
+
+    // Constructor mới có articles
+    public User(int id,
+                String uname,
+                String password,
+                String url_profile,
+                String short_bio,
+                ArrayList<Article> articles) {
+
+        this.id = id;
+        this.uname = uname;
+        this.password = password;
+        this.url_profile = url_profile;
+        this.short_bio = short_bio;
+        this.articles = articles;
     }
 
     public int getId() {
@@ -70,5 +102,13 @@ public class User {
 
     public void setShort_bio(String short_bio) {
         this.short_bio = short_bio;
+    }
+
+    public ArrayList<Article> getArticles() {
+        return articles;
+    }
+
+    public void setArticles(ArrayList<Article> articles) {
+        this.articles = articles;
     }
 }

@@ -1,40 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:gravity="fill"
+
+    android:gravity="center"
     android:orientation="vertical"
-    android:paddingTop="5sp"
-    android:paddingBottom="5sp">
 
-  <ImageView
-      android:id="@+id/imv_photo"
-      android:layout_width="150dp"
-      android:layout_height="150dp"
-      android:layout_gravity="center" />
+    android:padding="8dp">
+
+  <com.google.android.material.imageview.ShapeableImageView
+      android:id="@+id/iv_profile"
+
+      android:layout_width="95dp"
+      android:layout_height="95dp"
+
+      android:layout_gravity="center"
+
+      android:scaleType="centerCrop"
+
+      app:shapeAppearanceOverlay="@style/CircleImageView" />
 
   <TextView
-      android:id="@+id/tv_title"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_gravity="center"
-      android:fontFamily="cursive"
-      android:paddingTop="5sp"
-      android:paddingBottom="2sp"
-      android:text="Caption"
-      android:textColor="@color/white"
-      android:textSize="18sp" />
+      android:id="@+id/tv_username"
 
-  <TextView
-      android:id="@+id/tv_author"
-      android:layout_width="wrap_content"
+      android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:layout_gravity="center"
-      android:ellipsize="end"
+
+      android:layout_marginTop="8dp"
+
+      android:gravity="center"
+
       android:maxLines="1"
-      android:paddingBottom="10sp"
-      android:text="by author"
+
+      android:text="Username"
+
+      android:textColor="@color/white"
+
+      android:textSize="16sp"
+
+      android:textStyle="bold" />
+
+  <TextView
+      android:id="@+id/tv_bio"
+
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+
+      android:layout_marginTop="3dp"
+
+      android:ellipsize="end"
+
+      android:gravity="center"
+
+      android:maxLines="2"
+
+      android:text="Short bio"
+
       android:textColor="#B0BEC5"
-      android:textSize="12sp"
-      android:textStyle="italic" />
+
+      android:textSize="11sp" />
+
+  <TextView
+      android:id="@+id/tv_article_count"
+
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+
+      android:layout_marginTop="4dp"
+
+      android:gravity="center"
+
+      android:text="0 bài viết"
+
+      android:textColor="#80CBC4"
+
+      android:textSize="11sp" />
+
 </LinearLayout>
