@@ -1,0 +1,100 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "uname": "minh.anh",
+      "password": "minhanh@123",
+      "url_profile": "https://i.pravatar.cc/300?img=47",
+      "short_bio": "Food photographer who loves tropical fruits.",
+      "articles": [
+        {
+          "article_id": 1,
+          "article_title": "Pineapple",
+          "article_image": "https://images.unsplash.com/photo-1550258987-190a2d41a8ba",
+          "article_description": "A short article about pineapple and tropical fruit."
+        },
+        {
+          "article_id": 5,
+          "article_title": "Strawberry",
+          "article_image": "https://images.unsplash.com/photo-1560155069-ad79768f2666",
+          "article_description": "A short article about strawberries."
+        },
+        {
+          "article_id": 9,
+          "article_title": "Pear",
+          "article_image": "https://images.unsplash.com/photo-1601876819102-99560f772713",
+          "article_description": "A short article about pears."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "uname": "lan.huong",
+      "password": "lanhuong@123",
+      "url_profile": "https://i.pravatar.cc/300?img=32",
+      "short_bio": "Home cook sharing simple fruit recipes.",
+      "articles": [
+        {
+          "article_id": 2,
+          "article_title": "Cherry",
+          "article_image": "https://images.unsplash.com/photo-1528821128474-27f963b062bf",
+          "article_description": "A short article about cherries."
+        },
+        {
+          "article_id": 6,
+          "article_title": "Apple",
+          "article_image": "https://images.unsplash.com/photo-1600423115367-87ea7661688f",
+          "article_description": "A short article about apples."
+        },
+        {
+          "article_id": 10,
+          "article_title": "Blueberry",
+          "article_image": "https://images.unsplash.com/photo-1600046438510-46961a84f4b2",
+          "article_description": "A short article about blueberries."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "uname": "quoc.bao",
+      "password": "quocbao@123",
+      "url_profile": "https://i.pravatar.cc/300?img=12",
+      "short_bio": "Nutrition student and weekend farmer.",
+      "articles": [
+        {
+          "article_id": 3,
+          "article_title": "Orange",
+          "article_image": "https://images.unsplash.com/photo-1552841847-0e031d33a283",
+          "article_description": "A short article about oranges."
+        },
+        {
+          "article_id": 7,
+          "article_title": "Pomegranate",
+          "article_image": "https://images.unsplash.com/photo-1530730459653-e0edd4c6072e",
+          "article_description": "A short article about pomegranates."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "uname": "thu.trang",
+      "password": "thutrang@123",
+      "url_profile": "https://i.pravatar.cc/300?img=5",
+      "short_bio": "Travel blogger collecting stories from local markets.",
+      "articles": [
+        {
+          "article_id": 4,
+          "article_title": "Avocado",
+          "article_image": "https://images.unsplash.com/photo-1519162808019-7de1683fa2ad",
+          "article_description": "A short article about avocado."
+        },
+        {
+          "article_id": 8,
+          "article_title": "Papaya",
+          "article_image": "https://images.unsplash.com/photo-1517282009859-f000ec3b26fe",
+          "article_description": "A short article about papaya."
+        }
+      ]
+    }
+  ]
+}
