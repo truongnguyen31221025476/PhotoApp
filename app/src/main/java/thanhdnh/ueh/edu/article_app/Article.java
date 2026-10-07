@@ -20,11 +20,21 @@ public class Article {
   @Expose
   private String article_description;
 
+  @SerializedName("user")
+  @Expose
+  private User user;
+
   public Article(int article_id, String article_title, String article_image, String article_description) {
     this.article_id = article_id;
     this.article_title = article_title;
     this.article_image = article_image;
     this.article_description = article_description;
+  }
+
+  public Article(int article_id, String article_title, String article_image,
+                 String article_description, User user) {
+    this(article_id, article_title, article_image, article_description);
+    this.user = user;
   }
 
   public int getArticle_id() {
@@ -57,5 +67,13 @@ public class Article {
 
   public void setArticle_description(String article_description) {
     this.article_description = article_description;
+  }
+
+  public User getUser() {
+    return user;
+  }
+
+  public void setUser(User user) {
+    this.user = user;
   }
 }

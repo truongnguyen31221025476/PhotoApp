@@ -45,18 +45,28 @@ public class ArticleAdapter extends BaseAdapter {
       convertView = inflater.inflate(R.layout.article_disp_tpl, null);
       dataitem.iv_photo = convertView.findViewById(R.id.imv_photo);
       dataitem.tv_caption = convertView.findViewById(R.id.tv_title);
+      dataitem.tv_author = convertView.findViewById(R.id.tv_author);
       convertView.setTag(dataitem);
     } else {
       dataitem = (MyView) convertView.getTag();
     }
 
-    Picasso.get().load(article_list.get(position).getArticle_image()).resize(300, 400).centerCrop().into(dataitem.iv_photo);
-    dataitem.tv_caption.setText(article_list.get(position).getArticle_title());
+    Article article = article_list.get(position);
+    Picasso.get().load(article.getArticle_image()).resize(300, 400).centerCrop().into(dataitem.iv_photo);
+    dataitem.tv_caption.setText(article.getArticle_title());
+
+    User user = article.getUser();
+    if (user != null && user.getUname() != null) {
+      dataitem.tv_author.setText("by " + user.getUname());
+    } else {
+      dataitem.tv_author.setText("");
+    }
     return convertView;
   }
 
   private static class MyView {
     ImageView iv_photo;
     TextView tv_caption;
+    TextView tv_author;
   }
 }
